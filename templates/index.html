@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <a href="/create">Add New Student</a>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.name }} ({{ student.age }} years old) 
+            <a href="/{{ student.id }}/update">Edit</a> 
+            <form action="/{{ student.id }}/delete" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
